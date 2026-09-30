@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DatePipe, LowerCasePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-post-detail',
-  imports: [],
+  imports: [DatePipe, LowerCasePipe],
   templateUrl: './post-detail.html',
   styleUrl: './post-detail.css',
 })

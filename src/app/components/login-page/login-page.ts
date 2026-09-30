@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
       next: (token: string) => {
         this.tokenStorage.saveToken(token);
         this.authService.isLoggedIn = true;
-        this.router.navigate([this.authService.redirectUrl || '/']);
+        this.router.navigate(['/']);
       },
       error: () => alert('Invalid credentials'),
     });

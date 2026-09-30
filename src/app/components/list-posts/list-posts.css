@@ -1,0 +1,112 @@
+.index {
+  counter-reset: entry;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.entry {
+  counter-increment: entry;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.entry:hover {
+  transform: translateY(-2px);
+  border-color: var(--rule-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.entry:focus-within {
+  border-color: var(--accent);
+}
+
+.entry::before {
+  content: counter(entry, decimal-leading-zero);
+  grid-row: 1 / span 2;
+  padding-top: 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  transition: color 0.2s var(--ease);
+}
+
+.entry:hover::before {
+  color: var(--accent);
+}
+
+.entry-title {
+  grid-column: 2;
+  font-size: 1.35rem;
+  font-weight: 550;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.entry-title a {
+  color: var(--ink);
+}
+
+.entry-title a:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Stretch the title link over the card so the whole card is clickable. */
+.entry-title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.entry:hover .entry-title a {
+  color: var(--accent);
+}
+
+.entry-meta {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.entry-author {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.sep {
+  color: var(--rule-strong);
+}
+
+@media (max-width: 600px) {
+  .entry {
+    grid-template-columns: 1fr;
+    padding: 1rem 1.1rem;
+  }
+
+  .entry::before {
+    grid-row: auto;
+    padding-top: 0;
+    font-size: 0.75rem;
+  }
+
+  .entry-title,
+  .entry-meta {
+    grid-column: 1;
+  }
+
+  .entry-title {
+    font-size: 1.15rem;
+  }
+}

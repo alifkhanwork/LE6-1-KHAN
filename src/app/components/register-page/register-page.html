@@ -1,15 +1,33 @@
-<form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
-  <label for="username">Username</label>
-  <input type="text" name="username" [(ngModel)]="form.username" required #username="ngModel" />
+<div class="form-page">
+  <div class="form-card">
+    <div class="form-header">
+      <h1>Register</h1>
+      <h3>Create an account to start writing.</h3>
+    </div>
+    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" autocomplete="username" [(ngModel)]="form.username" required #username="ngModel" />
+      </div>
 
-  <label for="password">Password</label>
-  <input type="password" name="password" [(ngModel)]="form.password" required #password="ngModel" />
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" autocomplete="new-password" [(ngModel)]="form.password" required #password="ngModel" />
+      </div>
 
-  <label for="firstName">First Name</label>
-  <input type="text" name="firstName" [(ngModel)]="form.firstName" required #firstName="ngModel" />
+      <div class="field-row">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" autocomplete="given-name" [(ngModel)]="form.firstName" required #firstName="ngModel" />
+        </div>
 
-  <label for="lastName">Last Name</label>
-  <input type="text" name="lastName" [(ngModel)]="form.lastName" required #lastName="ngModel" />
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" autocomplete="family-name" [(ngModel)]="form.lastName" required #lastName="ngModel" />
+        </div>
+      </div>
 
-  <button>Submit</button>
-</form>
+      <button class="btn btn-block">Submit</button>
+    </form>
+  </div>
+</div>

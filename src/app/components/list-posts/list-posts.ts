@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { DatePipe, LowerCasePipe, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-list-posts',
-  imports: [NgFor],
+  imports: [NgFor, DatePipe, LowerCasePipe],
   templateUrl: './list-posts.html',
   styleUrl: './list-posts.css',
 })

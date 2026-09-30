@@ -1,0 +1,78 @@
+.story {
+  max-width: var(--wrap-reading);
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: var(--tap);
+  margin-bottom: 1rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.back-link span {
+  transition: transform 0.2s var(--ease);
+}
+
+.back-link:hover span {
+  transform: translateX(-3px);
+}
+
+.story-head {
+  padding-bottom: 1.5rem;
+}
+
+.story-title {
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+}
+
+.story-title a:hover {
+  color: var(--ink);
+}
+
+.story-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.story-author {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.sep {
+  color: var(--rule-strong);
+}
+
+.story-body {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--ink);
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .story-title {
+    font-size: 2rem;
+  }
+
+  .story-body {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+}

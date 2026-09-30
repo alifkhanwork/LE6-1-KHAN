@@ -25,8 +25,11 @@ export class RegisterPage implements OnInit {
     console.log(this.form);
 
     this.http.post('https://localhost:7195/api/login/register', this.form, { responseType: 'text' })
-      .subscribe(data => {
-        this.route.navigate(['/login']);
+      .subscribe({
+        next: () => {
+          this.route.navigate(['/login']);
+        },
+        error: () => alert('Registration failed'),
       });
   }
 }

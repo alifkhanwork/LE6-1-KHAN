@@ -1,4 +1,10 @@
-<div *ngFor="let post of posts">
-  <h3><a href="/posts/{{ post.id }}"> {{ post.title }} </a></h3>
-  <p>by {{ post.firstName }} {{ post.lastName }} ; on {{ post.dateCreated }}</p>
-</div>
+<section class="index" aria-label="All posts">
+  <div *ngFor="let post of posts" class="entry">
+    <h3 class="entry-title"><a href="/posts/{{ post.id }}"> {{ post.title }} </a></h3>
+    <p class="entry-meta meta">
+      <span class="entry-author">by {{ post.firstName }} {{ post.lastName }}</span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span class="entry-date">{{ post.dateCreated | date:'MMMM d, y · h' }}{{ post.dateCreated | date:'a' | lowercase }}</span>
+    </p>
+  </div>
+</section>
